@@ -90,7 +90,7 @@ platform (e.g. BitBucket, GitHub).
 
 **Frontend Activities**
 
-- [ ] Update `app/src/app/service/students.service.ts` to return 3 students from `getStudents`
+- [x] Update `app/src/app/service/students.service.ts` to return 3 students from `getStudents`
 - [ ] Update the `StudentsComponent` to show the resulting list of students from the `StudentsService` and list the
   students in the table provided
 - [ ] Add a column to display the student grades. Style the display of the grades so that they show a dynamic colour
