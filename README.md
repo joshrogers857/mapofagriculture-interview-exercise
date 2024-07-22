@@ -101,7 +101,7 @@ platform (e.g. BitBucket, GitHub).
 
 **Backend Interaction**
 
-- [ ] Update `StudentsService` to pull students from the API (this should be available
+- [x] Update `StudentsService` to pull students from the API (this should be available
   via `http://127.0.0.1:8000/api/students/`)
 - [ ] Allow a student to be selected from the list, and display their full details (on the existing page, or a new page
   inc. `id` and `email`)
