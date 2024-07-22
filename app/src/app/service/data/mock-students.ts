@@ -7,7 +7,7 @@ export const MOCK_STUDENTS: Student[] = [
         last_name: 'Doe',
         email: 'john.doe@example.com',
         subject: 'English',
-        grade: 65
+        grade: 49
     },
     {
         id: 2,
@@ -15,7 +15,7 @@ export const MOCK_STUDENTS: Student[] = [
         last_name: 'Doe',
         email: 'jane.doe@example.com',
         subject: 'Maths',
-        grade: 80
+        grade: 81
     },
     {
         id: 3,

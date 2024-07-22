@@ -4,6 +4,7 @@
             <th>First Name</th>
             <th>Last Name</th>
             <th>Subject</th>
+            <th>Grade</th>
         </tr>
     </thead>
     <tbody>
@@ -11,6 +12,11 @@
             <td>{{ student.first_name }}</td>
             <td>{{ student.last_name }}</td>
             <td>{{ student.subject }}</td>
+            <td
+                [ngStyle]="{ 'background-color': getGradeColour(student.grade) }"
+            >
+                {{ student.grade }}%
+            </td>
         </tr>
     </tbody>
 </table>

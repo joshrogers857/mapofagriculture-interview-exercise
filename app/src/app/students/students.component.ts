@@ -19,4 +19,14 @@ export class StudentsComponent implements OnInit {
             error: (error: Error) => console.error(error),
         });
     }
+
+    getGradeColour(grade: number): string {
+        if (grade > 80) {
+            return 'green';
+        } else if (grade > 50) {
+            return 'orange';
+        } else {
+            return 'red';
+        }
+    }
 }

@@ -93,7 +93,7 @@ platform (e.g. BitBucket, GitHub).
 - [x] Update `app/src/app/service/students.service.ts` to return 3 students from `getStudents`
 - [x] Update the `StudentsComponent` to show the resulting list of students from the `StudentsService` and list the
   students in the table provided
-- [ ] Add a column to display the student grades. Style the display of the grades so that they show a dynamic colour
+- [x] Add a column to display the student grades. Style the display of the grades so that they show a dynamic colour
   based on the following rules:
     - Green: average grade greater than 80%
     - Orange: average grade less than 80% and greater than 50%
