@@ -67,13 +67,13 @@ In order to complete this test you will need the following tools:
 
 Please enter/replace your details below.
 
-| What        | Value                |
-|-------------|----------------------|
-| Name        | John Smith           |
-| Email       | john.smith@gmail.com |
-| Date        | 2023-10-01           |
-| Start Time  | 14:00                |
-| Finish Time | 15:25                |
+| What        | Value                     |
+|-------------|---------------------------|
+| Name        | Joshua Rogers             |
+| Email       | joshuarogers857@gmail.com |
+| Date        | 2024-07-22                |
+| Start Time  | 15:05                     |
+| Finish Time | 00:00                     |
 
 ### Instructions
 
