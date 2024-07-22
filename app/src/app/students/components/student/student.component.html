@@ -1,0 +1,12 @@
+<div *ngIf="student; else errorMessage">
+    <h2>Student Details</h2>
+    <p><strong>ID:</strong> {{ student.id }}</p>
+    <p><strong>First Name:</strong> {{ student.first_name }}</p>
+    <p><strong>Last Name:</strong> {{ student.last_name }}</p>
+    <p><strong>Email:</strong> {{ student.email }}</p>
+    <p><strong>Subject:</strong> {{ student.subject }}</p>
+    <p><strong>Grade:</strong> {{ student.grade }}%</p>
+</div>
+<ng-template #errorMessage>
+    <h2>An error occured whilst loading student data.</h2>
+</ng-template>

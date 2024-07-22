@@ -14,3 +14,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('students', [\App\Http\Controllers\StudentController::class, 'index'])->name('students.index');
+Route::get('students/{id}', [\App\Http\Controllers\StudentController::class, 'show'])->name('students.show');

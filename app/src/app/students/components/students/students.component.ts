@@ -1,15 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { Student } from '../service/model/student';
-import { StudentsService } from '../service/students.service';
+import { Student } from '../../../service/model/student';
+import { StudentsService } from '../../../service/students.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector:    'app-students',
     templateUrl: './students.component.html',
+    styleUrls: ['./students.component.css']
 })
 export class StudentsComponent implements OnInit {
     protected students: Student[] = [];
 
-    constructor(private studentsService: StudentsService) {}
+    constructor(
+        private studentsService: StudentsService,
+        private router: Router,
+    ) {}
 
     ngOnInit(): void {
         this.studentsService.getStudents().subscribe({
@@ -20,6 +25,8 @@ export class StudentsComponent implements OnInit {
         });
     }
 
+    /* If this needed to be reused among more than 1 component,
+        it could be relocated to a helper .ts file */
     getGradeColour(grade: number): string {
         if (grade > 80) {
             return 'green';
@@ -28,5 +35,9 @@ export class StudentsComponent implements OnInit {
         } else {
             return 'red';
         }
+    }
+
+    viewStudent(id: number | string): void {
+        this.router.navigate(['/students', id]);
     }
 }

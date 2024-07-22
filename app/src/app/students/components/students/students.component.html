@@ -8,7 +8,11 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let student of students">
+        <tr
+            *ngFor="let student of students"
+            (click)="viewStudent(student.id)"
+            class="clickable"
+        >
             <td>{{ student.first_name }}</td>
             <td>{{ student.last_name }}</td>
             <td>{{ student.subject }}</td>

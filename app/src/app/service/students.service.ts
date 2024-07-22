@@ -18,4 +18,13 @@ export class StudentsService {
             }),
         );
     }
+
+    getStudent(id: number): Observable<Student> {
+        return this.http.get<Student>(`${this.apiUrl}/${id}`).pipe(
+            catchError((error: Error) => {
+                console.error(`Error fetching student with id ${id}: `, error);
+                return of(); // Return nothing if an error occurs
+            }),
+        );
+    }
 }

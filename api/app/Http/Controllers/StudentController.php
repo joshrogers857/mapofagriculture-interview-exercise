@@ -12,4 +12,8 @@ class StudentController
         return Student::all();
     }
 
+    public function show(int $id) {
+        return Student::find($id);
+    }
+
 }
