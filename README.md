@@ -73,7 +73,7 @@ Please enter/replace your details below.
 | Email       | joshuarogers857@gmail.com |
 | Date        | 2024-07-22                |
 | Start Time  | 15:05                     |
-| Finish Time | 00:00                     |
+| Finish Time | 17:03                     |
 
 ### Instructions
 
