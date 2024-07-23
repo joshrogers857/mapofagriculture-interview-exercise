@@ -10,6 +10,14 @@ export class StudentsService {
 
     constructor(private http: HttpClient) { }
 
+    /**
+     * Gets a list of students from our API, optionally
+     * filtered by a search string
+     * 
+     * @param queryString to optionally filter by, partial
+     * matches first_name and last_name
+     * @returns observable array of students
+     */
     public getStudents(queryString?: string): Observable<Student[]> {
         const fullUrl = queryString ? `${this.apiUrl}?search=${queryString}` : this.apiUrl;
 
@@ -21,6 +29,13 @@ export class StudentsService {
         );
     }
 
+    /**
+     * Gets the specified student from our API if they
+     * exist
+     * 
+     * @param id of the student to get
+     * @returns observable student or undefined
+     */
     public getStudentById(id: number): Observable<Student | undefined> {
         return this.http.get<Student>(`${this.apiUrl}/${id}`).pipe(
             catchError((error: Error) => {

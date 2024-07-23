@@ -16,6 +16,13 @@ export class StudentsComponent implements OnInit {
         private router: Router,
     ) {}
 
+    /**
+     * Gets the list of students, optionally filtered
+     * by a search string
+     * 
+     * @param searchString to optionally filter by, partial
+     * matches first_name and last_name
+     */
     private loadStudents(searchString?: string): void {
         this.studentsService.getStudents(searchString).subscribe({
             next: (data: Student[]) => {
@@ -29,9 +36,16 @@ export class StudentsComponent implements OnInit {
         this.loadStudents();
     }
 
-    /* If this needed to be reused among more than 1 component,
-        it could be relocated to a helper .ts file */
+    /**
+     * Returns the appropriate colour name for
+     * the given grade percentage
+     * 
+     * @param grade percentage to use
+     * @returns colour name as a string
+     */
     public getGradeColour(grade: number): string {
+        /* If this needed to be reused among more than 1 component,
+            it could be relocated to a helper .ts file */
         if (grade > 80) {
             return 'green';
         } else if (grade > 50) {

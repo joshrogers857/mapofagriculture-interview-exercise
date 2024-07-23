@@ -13,17 +13,32 @@ export class SearchComponent {
   constructor() {
   }
 
+  /**
+   * Handler function for a search event
+   * 
+   * @param searchString to search with
+   */
   public onSearch(searchString: string): void {
     this.search.emit(searchString);
   }
 
+  /**
+   * Handler function for a reset event
+   */
   public onReset(): void {
     this.searchInputRef.nativeElement.value = ''; // Reset the form field to empty
     this.reset.emit(null);
   }
 
+  /**
+   * Handler function for a search event. Prevents
+   * default event behaviour
+   * 
+   * @param event to prevent default behaviour of
+   * @param searchString to search with
+   */
   public onEnterKeydown(event: Event, searchString: string) {
-    event.preventDefault(); // Prevents default page refresh behaviour
+    event.preventDefault();
     this.onSearch(searchString);
   }
 }
