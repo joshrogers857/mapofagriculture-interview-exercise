@@ -6,11 +6,11 @@ import { buildApiUrl } from './helpers/request-helper';
 
 @Injectable({ providedIn: 'root' })
 export class StudentsService {
-    private apiUrl = buildApiUrl('students');
+    private readonly apiUrl = buildApiUrl('students');
 
     constructor(private http: HttpClient) { }
 
-    getStudents(queryString?: string): Observable<Student[]> {
+    public getStudents(queryString?: string): Observable<Student[]> {
         const fullUrl = queryString ? `${this.apiUrl}?search=${queryString}` : this.apiUrl;
 
         return this.http.get<Student[]>(fullUrl).pipe(
@@ -21,7 +21,7 @@ export class StudentsService {
         );
     }
 
-    getStudent(id: number): Observable<Student | undefined> {
+    public getStudent(id: number): Observable<Student | undefined> {
         return this.http.get<Student>(`${this.apiUrl}/${id}`).pipe(
             catchError((error: Error) => {
                 console.error(`Error fetching student with id ${id}: `, error);

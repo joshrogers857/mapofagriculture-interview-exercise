@@ -9,7 +9,7 @@ import { StudentsService } from 'src/app/service/students.service';
   styleUrls: ['./student.component.css']
 })
 export class StudentComponent implements OnInit {
-  protected student: Student | undefined;
+  public student: Student | undefined;
 
   constructor (
     private route: ActivatedRoute,

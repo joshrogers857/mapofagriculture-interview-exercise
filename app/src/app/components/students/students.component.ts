@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Student } from '../../../service/model/student';
-import { StudentsService } from '../../../service/students.service';
+import { Student } from 'src/app/service/model/student';
+import { StudentsService } from 'src/app/service/students.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,14 +9,14 @@ import { Router } from '@angular/router';
     styleUrls: ['./students.component.css']
 })
 export class StudentsComponent implements OnInit {
-    protected students: Student[] = [];
+    public students: Student[] = [];
 
     constructor(
         private studentsService: StudentsService,
         private router: Router,
     ) {}
 
-    loadStudents(searchString?: string): void {
+    private loadStudents(searchString?: string): void {
         this.studentsService.getStudents(searchString).subscribe({
             next: (data: Student[]) => {
                 this.students = data;
@@ -31,7 +31,7 @@ export class StudentsComponent implements OnInit {
 
     /* If this needed to be reused among more than 1 component,
         it could be relocated to a helper .ts file */
-    getGradeColour(grade: number): string {
+    public getGradeColour(grade: number): string {
         if (grade > 80) {
             return 'green';
         } else if (grade > 50) {
@@ -41,15 +41,15 @@ export class StudentsComponent implements OnInit {
         }
     }
 
-    viewStudent(id: number | string): void {
+    public viewStudent(id: number | string): void {
         this.router.navigate(['/students', id]);
     }
 
-    onSearch(searchString: string): void {
+    public onSearch(searchString: string): void {
         this.loadStudents(searchString);
     }
 
-    onReset(): void {
+    public onReset(): void {
         this.loadStudents();
     }
 }

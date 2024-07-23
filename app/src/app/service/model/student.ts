@@ -5,4 +5,4 @@ export interface Student {
     email: string;
     subject: 'English' | 'Geography' | 'Maths' | 'Science';
     grade: number;
-}
+};
