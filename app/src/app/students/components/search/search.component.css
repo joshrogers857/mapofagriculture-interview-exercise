@@ -1,0 +1,32 @@
+.cancel-button {
+    background-color: darkred;
+    color: white;
+    padding: 0.5rem;
+    border: 1px solid grey;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+.cancel-button:hover {
+    background-color: rgb(100, 0, 0);
+}
+
+.search-button {
+    background-color: lightgrey;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid grey;
+}
+
+.search-button:hover {
+    background-color: grey;
+}
+
+.search-input {
+    border: solid 1px grey;
+    padding: 0.5rem;
+    display: inline-block;
+    margin-right: 0.5rem;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+}

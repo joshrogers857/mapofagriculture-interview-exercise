@@ -20,7 +20,7 @@ export class StudentComponent implements OnInit {
     const id = Number(this.route.snapshot.paramMap.get('id'));
 
     this.studentsService.getStudent(id).subscribe({
-      next: (data: Student) => {
+      next: (data: Student | undefined) => {
         this.student = data;
       },
       error: (error: Error) => console.error(error),

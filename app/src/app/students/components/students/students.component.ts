@@ -16,13 +16,17 @@ export class StudentsComponent implements OnInit {
         private router: Router,
     ) {}
 
-    ngOnInit(): void {
-        this.studentsService.getStudents().subscribe({
+    loadStudents(searchString?: string): void {
+        this.studentsService.getStudents(searchString).subscribe({
             next: (data: Student[]) => {
                 this.students = data;
             },
             error: (error: Error) => console.error(error),
         });
+    }
+
+    ngOnInit(): void {
+        this.loadStudents();
     }
 
     /* If this needed to be reused among more than 1 component,
@@ -39,5 +43,13 @@ export class StudentsComponent implements OnInit {
 
     viewStudent(id: number | string): void {
         this.router.navigate(['/students', id]);
+    }
+
+    onSearch(searchString: string): void {
+        this.loadStudents(searchString);
+    }
+
+    onReset(): void {
+        this.loadStudents();
     }
 }

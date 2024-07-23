@@ -1,0 +1,23 @@
+<form class="search">
+    <button
+        type="button"
+        class="cancel-button"
+        (click)="onReset()"
+    >
+        X
+    </button>
+    <input
+        type="text"
+        placeholder="Search"
+        class="search-input"
+        (keydown.enter)="onEnterKeydown($event, searchInput.value)"
+        #searchInput
+    />
+    <button
+        type="button"
+        class="search-button"
+        (click)="onSearch(searchInput.value)"
+    >
+        Search
+    </button>
+</form>
