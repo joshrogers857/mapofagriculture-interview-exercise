@@ -1,4 +1,4 @@
-<div *ngIf="student; else errorMessage">
+<div *ngIf="student">
     <h2>Student Details</h2>
     <p><strong>ID:</strong> {{ student.id }}</p>
     <p><strong>First Name:</strong> {{ student.first_name }}</p>
@@ -7,6 +7,4 @@
     <p><strong>Subject:</strong> {{ student.subject }}</p>
     <p><strong>Grade:</strong> {{ student.grade }}%</p>
 </div>
-<ng-template #errorMessage>
-    <h2>An error occured whilst loading student data.</h2>
-</ng-template>
+<h2 *ngIf="hasError">An error occured whilst loading student data.</h2>
