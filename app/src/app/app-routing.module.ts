@@ -4,9 +4,21 @@ import { StudentsComponent } from "./components/students/students.component";
 import { StudentComponent } from './components/student/student.component';
 
 const routes: Routes = [
-    { path: 'students', component: StudentsComponent },
-    { path: 'students/:id', component: StudentComponent },
-    { path: '', redirectTo: '/students', pathMatch: 'full' }, // Default route, redirects to students list
+    {
+        path: 'students',
+        component: StudentsComponent,
+        title: 'students',
+    },
+    {
+        path: 'students/:id',
+        component: StudentComponent,
+        title: 'student',
+    },
+    {
+        path: '',
+        redirectTo: '/students',
+        pathMatch: 'full'
+    }, // Default route, redirects to students list
 ];
 
 @NgModule({

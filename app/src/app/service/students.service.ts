@@ -21,7 +21,7 @@ export class StudentsService {
         );
     }
 
-    public getStudent(id: number): Observable<Student | undefined> {
+    public getStudentById(id: number): Observable<Student | undefined> {
         return this.http.get<Student>(`${this.apiUrl}/${id}`).pipe(
             catchError((error: Error) => {
                 console.error(`Error fetching student with id ${id}: `, error);
