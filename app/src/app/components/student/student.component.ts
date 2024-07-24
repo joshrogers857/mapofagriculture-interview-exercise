@@ -24,8 +24,7 @@ export class StudentComponent implements OnInit {
       next: (data: Student | undefined) => {
         this.student = data;
       },
-      error: (error: Error) => {
-        console.error(error)
+      error: () => {
         this.hasError = true;
       },
     });

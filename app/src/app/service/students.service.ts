@@ -24,7 +24,7 @@ export class StudentsService {
         return this.http.get<Student[]>(fullUrl).pipe(
             catchError((error: Error) => {
                 console.error('Error fetching students: ', error);
-                return of([]); // Return an empty array if an error occurs
+                throw error;
             }),
         );
     }
@@ -40,7 +40,7 @@ export class StudentsService {
         return this.http.get<Student>(`${this.apiUrl}/${id}`).pipe(
             catchError((error: Error) => {
                 console.error(`Error fetching student with id ${id}: `, error);
-                return of(); // Return nothing if an error occurs
+                throw error;
             }),
         );
     }
