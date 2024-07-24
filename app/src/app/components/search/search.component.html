@@ -8,15 +8,16 @@
     </button>
     <input
         type="text"
+        name="searchInput"
         placeholder="Search"
         class="search-input"
-        (keydown.enter)="onEnterKeydown($event, searchInput.value)"
-        #searchInput
+        [(ngModel)]="searchString"
+        (keydown.enter)="onEnterKeydown($event)"
     />
     <button
         type="button"
         class="search-button"
-        (click)="onSearch(searchInput.value)"
+        (click)="onSearch()"
     >
         Search
     </button>

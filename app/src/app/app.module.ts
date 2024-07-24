@@ -7,6 +7,7 @@ import { AppComponent }      from './app.component';
 import { StudentsComponent } from './components/students/students.component';
 import { StudentComponent } from './components/student/student.component';
 import { SearchComponent } from './components/search/search.component';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
               declarations: [
@@ -19,6 +20,7 @@ import { SearchComponent } from './components/search/search.component';
                   BrowserModule,
                   AppRoutingModule,
                   HttpClientModule,
+                  FormsModule,
               ],
               providers:    [],
               bootstrap:    [ AppComponent ],

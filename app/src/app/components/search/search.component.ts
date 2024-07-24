@@ -8,25 +8,23 @@ import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular
 export class SearchComponent {
   @Output() public search: EventEmitter<string> = new EventEmitter();
   @Output() public reset: EventEmitter<null> = new EventEmitter();
-  @ViewChild('searchInput') private searchInputRef!: ElementRef<HTMLInputElement>;
+  public searchString: string = '';
 
   constructor() {
   }
 
   /**
    * Handler function for a search event
-   * 
-   * @param searchString to search with
    */
-  public onSearch(searchString: string): void {
-    this.search.emit(searchString);
+  public onSearch(): void {
+    this.search.emit(this.searchString);
   }
 
   /**
    * Handler function for a reset event
    */
   public onReset(): void {
-    this.searchInputRef.nativeElement.value = ''; // Reset the form field to empty
+    this.searchString = ''; // Reset the form field to empty
     this.reset.emit(null);
   }
 
@@ -35,10 +33,9 @@ export class SearchComponent {
    * default event behaviour
    * 
    * @param event to prevent default behaviour of
-   * @param searchString to search with
    */
-  public onEnterKeydown(event: Event, searchString: string) {
+  public onEnterKeydown(event: Event) {
     event.preventDefault();
-    this.onSearch(searchString);
+    this.onSearch();
   }
 }
